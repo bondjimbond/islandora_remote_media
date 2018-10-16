@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * islandora_remote_media.install
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * @see islandora_remote_media_islandora_required_objects()
+ */
+function islandora_remote_media_install() {
+  module_load_include('inc', 'islandora', 'includes/solution_packs');
+  islandora_install_solution_pack('islandora_remote_media');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function islandora_remote_media_uninstall() {
+  module_load_include('inc', 'islandora', 'includes/solution_packs');
+  islandora_install_solution_pack('islandora_remote_media', 'uninstall');
+}

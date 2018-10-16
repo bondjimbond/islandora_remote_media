@@ -13,7 +13,7 @@ The use case for this solution pack is to make externally-hosted media discovera
 
 This is particularly useful if storage is expensive, as Islandora media objects and their derivatives have high storage demands.
 
-![Screenshot](https://imgur.com/a/1zyPWRj)
+![Screenshot](https://i.imgur.com/K4WwM30.png)
 
 ## Requirements
 

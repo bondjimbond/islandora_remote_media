@@ -39,7 +39,13 @@
         <properties>
           <type>markup</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -63,8 +69,14 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Title of the work.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -84,7 +96,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -93,7 +108,13 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Sub Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -113,7 +134,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -139,7 +163,13 @@
             <properties>
               <type>tabpanel</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -154,7 +184,10 @@
                   <path>mods:name</path>
                   <context>parent</context>
                 </read>
-                <update>NULL</update>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
                 <delete>
                   <path>self::node()</path>
                   <context>self</context>
@@ -166,12 +199,18 @@
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>personal</default_value>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
                     <corporate>corporate</corporate>
                     <personal>personal</personal>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Type</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -191,7 +230,10 @@
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -200,7 +242,14 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <description>Format lastname, firstname.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Name</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -220,7 +269,10 @@
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -229,13 +281,9 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <autocomplete_path>taxonomy/autocomplete/field_role_relators</autocomplete_path>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Select a role from this vocabulary -
-                                                  &lt;a
-                                                  href="http://id.loc.gov/vocabulary/relators.html"
-                                                  target="_blank"&gt;http://id.loc.gov/vocabulary/relators.html&lt;/a&gt;
+                  <description>Select a role from this vocabulary - &lt;a href="http://id.loc.gov/vocabulary/relators.html" target="_blank"&gt;http://id.loc.gov/vocabulary/relators.html&lt;/a&gt;
                   </description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
@@ -251,9 +299,7 @@
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm
-                                                  authority="marcrelator"
-                                                  type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
                       <path>mods:role/mods:roleTerm</path>
@@ -263,7 +309,10 @@
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -274,10 +323,24 @@
       </element>
       <element name="typeOfResource">
         <properties>
-          <type>hidden</type>
+          <type>select</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>moving image</default_value>
-          <required>FALSE</required>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <options>
+            <index key="mixed material">mixed material</index>
+            <index key="moving image">moving image</index>
+            <index key="sound recording-nonmusical">sound recording-nonmusical</index>
+            <index key="sound recording-musical">sound recording-musical</index>
+            <index key="sound recording">sound recording</index>
+          </options>
+          <required>TRUE</required>
+          <resizable>FALSE</resizable>
+          <title>Type of resource</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -296,178 +359,25 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
       </element>
       <element name="genre">
         <properties>
-          <type>select</type>
+          <type>textfield</type>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>Select from an authority, such as https://www.loc.gov/standards/valuelist/marcgt.html</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
-          <options>
-            <index key="">Select a Genre</index>
-            <Actuality>Actuality</Actuality>
-            <Adaptation>Adaptation</Adaptation>
-            <Adventure>Adventure</Adventure>
-            <Adventure_Nonfiction>Adventure
-                                                  (Nonfiction)
-            </Adventure_Nonfiction>
-            <Ancient_world>Ancient world</Ancient_world>
-            <Animal>Animal</Animal>
-            <Art>Art</Art>
-            <Aviation>Aviation</Aviation>
-            <Biographical>Biographical</Biographical>
-            <Biographical_Nonfiction>Biographical
-                                                  (Nonfiction)
-            </Biographical_Nonfiction>
-            <Buddy>Buddy</Buddy>
-            <Caper>Caper</Caper>
-            <Chase>Chase</Chase>
-            <Childrens>Children's</Childrens>
-            <College>College</College>
-            <Comedy>Comedy</Comedy>
-            <Crime>Crime</Crime>
-            <Dance>Dance</Dance>
-            <Dark_comedy>Dark comedy</Dark_comedy>
-            <Disability>Disability</Disability>
-            <Disaster>Disaster</Disaster>
-            <Documentary>Documentary</Documentary>
-            <Domestic_comedy>Domestic comedy</Domestic_comedy>
-            <Educational>Educational</Educational>
-            <Erotic>Erotic</Erotic>
-            <Espionage>Espionage</Espionage>
-            <Ethnic>Ethnic</Ethnic>
-            <Ethnic_Nonfiction>Ethnic
-                                                  (Nonfiction)
-            </Ethnic_Nonfiction>
-            <Ethnographic>Ethnographic</Ethnographic>
-            <Experimental>Experimental</Experimental>
-            <Absolute>Absolute</Absolute>
-            <Abstract_live_action>Abstract live
-                                                  action
-            </Abstract_live_action>
-            <Activist>Activist</Activist>
-            <Autobiographical>Autobiographical</Autobiographical>
-            <City_symphony>City symphony</City_symphony>
-            <Cubist>Cubist</Cubist>
-            <Dada>Dada</Dada>
-            <Diary>Diary</Diary>
-            <Feminist>Feminist</Feminist>
-            <Gay_lesbian>Gay/lesbian</Gay_lesbian>
-            <Intermittent_animation>Intermittent
-                                                  animation
-            </Intermittent_animation>
-            <Landscape>Landscape</Landscape>
-            <Loop>Loop</Loop>
-            <Lyrical>Lyrical</Lyrical>
-            <Participatory>Participatory</Participatory>
-            <Portrait>Portrait</Portrait>
-            <Reflexive>Reflexive</Reflexive>
-            <Street>Street</Street>
-            <Structural>Structural</Structural>
-            <Surrealist>Surrealist</Surrealist>
-            <Text>Text</Text>
-            <Trance>Trance</Trance>
-            <Exploitation>Exploitation</Exploitation>
-            <Fallen_woman>Fallen woman</Fallen_woman>
-            <Family>Family</Family>
-            <Fantasy>Fantasy</Fantasy>
-            <Film_noir>Film noir</Film_noir>
-            <Game>Game</Game>
-            <Gangster>Gangster</Gangster>
-            <Historical>Historical</Historical>
-            <Home_shopping>Home shopping</Home_shopping>
-            <Horror>Horror</Horror>
-            <Industrial>Industrial</Industrial>
-            <Instructional>Instructional</Instructional>
-            <Interview>Interview</Interview>
-            <Journalism>Journalism</Journalism>
-            <Jungle>Jungle</Jungle>
-            <Juvenile_delinquency>Juvenile
-                                                  delinquency
-            </Juvenile_delinquency>
-            <Lecture>Lecture</Lecture>
-            <Legal>Legal</Legal>
-            <Magazine>Magazine</Magazine>
-            <Martial_arts>Martial arts</Martial_arts>
-            <Maternal_melodrama>Maternal
-                                                  melodrama
-            </Maternal_melodrama>
-            <Medical>Medical</Medical>
-            <Medical_Nonfiction>Medical
-                                                  (Nonfiction)
-            </Medical_Nonfiction>
-            <Melodrama>Melodrama</Melodrama>
-            <Military>Military</Military>
-            <Music>Music</Music>
-            <Music_video>Music video</Music_video>
-            <Musical>Musical</Musical>
-            <Mystery>Mystery</Mystery>
-            <Nature>Nature</Nature>
-            <News>News</News>
-            <Newsreel>Newsreel</Newsreel>
-            <Opera>Opera</Opera>
-            <Operetta>Operetta</Operetta>
-            <Parody>Parody</Parody>
-            <Police>Police</Police>
-            <Political>Political</Political>
-            <Pornography>Pornography</Pornography>
-            <Prehistoric>Prehistoric</Prehistoric>
-            <Prison>Prison</Prison>
-            <Propaganda>Propaganda</Propaganda>
-            <Public_access>Public access</Public_access>
-            <Public_affairs>Public affairs</Public_affairs>
-            <index key="Reality-based">Reality-based</index>
-            <Religion>Religion</Religion>
-            <Religious>Religious</Religious>
-            <Road>Road</Road>
-            <Romance>Romance</Romance>
-            <Science_fiction>Science fiction</Science_fiction>
-            <Screwball_comedy>Screwball
-                                                  comedy
-            </Screwball_comedy>
-            <Show_business>Show business</Show_business>
-            <Singing_cowboy>Singing cowboy</Singing_cowboy>
-            <Situation_comedy>Situation
-                                                  comedy
-            </Situation_comedy>
-            <Slapstick_comedy>Slapstick
-                                                  comedy
-            </Slapstick_comedy>
-            <Slasher>Slasher</Slasher>
-            <Soap_opera>Soap opera</Soap_opera>
-            <Social_guidance>Social guidance</Social_guidance>
-            <Social_problem>Social problem</Social_problem>
-            <Sophisticated_comedy>Sophisticated
-                                                  comedy
-            </Sophisticated_comedy>
-            <Speculation>Speculation</Speculation>
-            <Sponsored>Sponsored</Sponsored>
-            <Sports_NonFiction>Sports
-                                                  (Nonfiction)
-            </Sports_NonFiction>
-            <Sports>Sports</Sports>
-            <Survival>Survival</Survival>
-            <Talk>Talk</Talk>
-            <Thriller>Thriller</Thriller>
-            <Training>Training</Training>
-            <Travelogue>Travelogue</Travelogue>
-            <Trick>Trick</Trick>
-            <Trigger>Trigger</Trigger>
-            <Variety>Variety</Variety>
-            <War>War</War>
-            <Western>Western</Western>
-            <Women>Women</Women>
-            <Youth>Youth</Youth>
-            <Yukon>Yukon</Yukon>
-          </options>
-          <required>FALSE</required>
+          <required>TRUE</required>
           <resizable>FALSE</resizable>
           <title>Genre</title>
           <tree>TRUE</tree>
@@ -491,7 +401,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -522,8 +435,14 @@
               <path>mods:originInfo</path>
               <context>parent</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -561,7 +480,10 @@ Enter date in the format YYYY-MM-DD.
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -570,7 +492,13 @@ Enter date in the format YYYY-MM-DD.
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Publisher</title>
               <tree>TRUE</tree>
               <actions>
@@ -590,7 +518,10 @@ Enter date in the format YYYY-MM-DD.
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -599,7 +530,13 @@ Enter date in the format YYYY-MM-DD.
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Country</title>
               <tree>TRUE</tree>
               <actions>
@@ -628,7 +565,13 @@ Enter date in the format YYYY-MM-DD.
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Place</title>
               <tree>TRUE</tree>
               <actions>
@@ -663,9 +606,7 @@ Enter date in the format YYYY-MM-DD.
           <autocomplete_path>taxonomy/autocomplete/field_languages</autocomplete_path>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Select an iso639-2b
-                                                  language (text, not code) from
-                                                  http://www.loc.gov/standards/iso639-2/php/code_list.php
+          <description>Select an iso639-2b language (text, not code) from http://www.loc.gov/standards/iso639-2/php/code_list.php
           </description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
@@ -681,9 +622,7 @@ Enter date in the format YYYY-MM-DD.
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;language&gt;&lt;languageTerm
-                                                  authority="iso639-2b"
-                                                  type="text"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
+              <value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="text"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
             </create>
             <read>
               <path>mods:language/mods:languageTerm</path>
@@ -1167,7 +1106,11 @@ Enter date in the format YYYY-MM-DD.
               <access>TRUE</access>
               <collapsed>TRUE</collapsed>
               <collapsible>TRUE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Geographic Information</title>
               <tree>TRUE</tree>
               <actions>
@@ -1187,7 +1130,10 @@ Enter date in the format YYYY-MM-DD.
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -1195,16 +1141,22 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>North America</default_value>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
-                    <index key="Select Continent"/>
-                    <Africa>Africa</Africa>
-                    <Asia>Asia</Asia>
-                    <Europe>Europe</Europe>
-                    <index key="North America">North America</index>
                     <index key="South America">South America</index>
+                    <index key="Select Continent"/>
+                    <index key="North America">North America</index>
+                    <Europe>Europe</Europe>
+                    <Asia>Asia</Asia>
+                    <Africa>Africa</Africa>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Continent</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1224,7 +1176,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1233,10 +1188,16 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>Name of a country, i.e. a political
                                                   entity considered a country.
                   </description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Country</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1256,7 +1217,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1265,11 +1229,17 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>Includes first order political
                                                   divisions called provinces within a country, e.g.
                                                   in Canada.
                   </description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Province</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1289,7 +1259,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1298,11 +1271,17 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>Includes regions that have status as
                                                   a jurisdiction, usually incorporating more than
                                                   one first level jurisdiction.
                   </description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Region</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1322,7 +1301,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1331,11 +1313,17 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>Name of the largest local
                                                   administrative unit in various countries, e.g.
                                                   England.
                   </description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>County</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1355,7 +1343,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1364,10 +1355,16 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>Name of an inhabited place
                                                   incorporated as a city, town, etc.
                   </description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>City</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1387,7 +1384,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1396,11 +1396,17 @@ Enter date in the format YYYY-MM-DD.
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <description>Name of a smaller unit within a
                                                   populated place, e.g., neighborhoods, parks, or
                                                   streets.
                   </description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>City Section</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1420,7 +1426,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1431,7 +1440,13 @@ Enter date in the format YYYY-MM-DD.
             <properties>
               <type>fieldset</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Cartographics</title>
               <tree>TRUE</tree>
               <actions>
@@ -1451,7 +1466,10 @@ Enter date in the format YYYY-MM-DD.
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -1488,7 +1506,10 @@ Enter date in the format YYYY-MM-DD.
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1525,19 +1546,19 @@ Enter date in the format YYYY-MM-DD.
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
           <options>
-            <index key="">No statement selected</index>
-            <index key="http://rightsstatements.org/vocab/NKC/1.0/">NO KNOWN COPYRIGHT</index>
+            <index key="http://rightsstatements.org/vocab/UND/1.0/">COPYRIGHT UNDETERMINED</index>
             <index key="http://rightsstatements.org/vocab/NoC-US/1.0/">NO COPYRIGHT - UNITED STATES</index>
             <index key="http://rightsstatements.org/vocab/NoC-OKLR/1.0/">NO COPYRIGHT - OTHER KNOWN LEGAL RESTRICTIONS</index>
             <index key="http://rightsstatements.org/vocab/NoC-NC/1.0/">NO COPYRIGHT - NON-COMMERCIAL USE ONLY</index>
             <index key="http://rightsstatements.org/vocab/NoC-CR/1.0/">NO COPYRIGHT - CONTRACTUAL RESTRICTIONS</index>
-            <index key="http://rightsstatements.org/vocab/InC-RUU/1.0/">IN COPYRIGHT - RIGHTS-HOLDER(S) UNLOCATABLE OR UNIDENTIFIABLE</index>
-            <index key="http://rightsstatements.org/vocab/InC-NC/1.0/">IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED</index>
-            <index key="http://rightsstatements.org/vocab/InC-OW-EU/1.0/">IN COPYRIGHT - EU ORPHAN WORK</index>
-            <index key="http://rightsstatements.org/vocab/InC-EDU/1.0/">IN COPYRIGHT - EDUCATIONAL USE PERMITTED</index>
+            <index key="http://rightsstatements.org/vocab/NKC/1.0/">NO KNOWN COPYRIGHT</index>
             <index key="http://rightsstatements.org/vocab/InC/1.0/">IN COPYRIGHT</index>
-            <index key="http://rightsstatements.org/vocab/UND/1.0/">COPYRIGHT UNDETERMINED</index>
+            <index key="http://rightsstatements.org/vocab/InC-RUU/1.0/">IN COPYRIGHT - RIGHTS-HOLDER(S) UNLOCATABLE OR UNIDENTIFIABLE</index>
+            <index key="http://rightsstatements.org/vocab/InC-OW-EU/1.0/">IN COPYRIGHT - EU ORPHAN WORK</index>
+            <index key="http://rightsstatements.org/vocab/InC-NC/1.0/">IN COPYRIGHT - NON-COMMERCIAL USE PERMITTED</index>
+            <index key="http://rightsstatements.org/vocab/InC-EDU/1.0/">IN COPYRIGHT - EDUCATIONAL USE PERMITTED</index>
             <index key="http://rightsstatements.org/vocab/CNE/1.0/">COPYRIGHT NOT EVALUATED</index>
+            <index key="">No statement selected</index>
           </options>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
@@ -1602,7 +1623,10 @@ Enter date in the format YYYY-MM-DD.
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>

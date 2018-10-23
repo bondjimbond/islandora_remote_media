@@ -53,7 +53,7 @@ function islandora_remote_media_edit_obj_form_submit($form, &$form_state) {
   else {
     $content = $object['OBJ'];
   }
-  $content->setContentFromString($form_state['values']['content']);
+  $content->setContentFromString(check_markup($form_state['values']['content'], "full_html"));
   drupal_set_message(t("Embed code updated for !object.", array('!object' => $object->id)));
   drupal_goto("islandora/object/{$object->id}/manage/datastreams");
 }

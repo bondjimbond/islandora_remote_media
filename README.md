@@ -10,7 +10,10 @@ similar to any other Islandora object, except instead of using Islandora's viewe
 the remote resource.
 
 The use case for this solution pack is to make externally-hosted media discoverable in the repository and to expose it to harvesters.
+
 This is particularly useful if storage is expensive, as Islandora media objects and their derivatives have high storage demands.
+
+![Screenshot](https://i.imgur.com/F3nzfbT.png)
 
 ## Requirements
 

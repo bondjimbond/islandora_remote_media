@@ -6,6 +6,23 @@
  */
 
 /**
+ * Implements hook_permission().
+ */
+function islandora_remote_media_permission() {
+  $permissions = array(
+    'ISLANDORA_REMOTE_MEDIA_EDIT_OBJ' => array(
+      'title' => t('Edit Remote Media embed code'),
+      'description' => t('Edit the OBJ datastream for Remote Media objects.'),
+    ),
+    'ISLANDORA_REMOTE_MEDIA_REPLACE_OBJ' => array(
+      'title' => t('Replace Remote Media OBJ datastream'),
+      'description' => t('Upload a file to replace the Remote Media OBJ datastream.'),
+    ),
+  );
+  return $permissions;
+}
+
+/**
  * Implements hook_menu().
  */
 function islandora_remote_media_menu() {
@@ -21,6 +38,7 @@ function islandora_remote_media_menu() {
         ISLANDORA_METADATA_EDIT,
         ISLANDORA_ADD_DS,
         ISLANDORA_PURGE,
+        ISLANDORA_REMOTE_MEDIA_EDIT_OBJ,
       ), 2),
     'type' => MENU_CALLBACK,
   );

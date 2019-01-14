@@ -35,10 +35,7 @@ function islandora_remote_media_menu() {
     'access callback' => 'islandora_object_manage_access_callback',
     'access arguments' => array(
       array(
-        ISLANDORA_METADATA_EDIT,
-        ISLANDORA_ADD_DS,
-        ISLANDORA_PURGE,
-        ISLANDORA_REMOTE_MEDIA_EDIT_OBJ,
+        'ISLANDORA_REMOTE_MEDIA_EDIT_OBJ',
       ), 2),
     'type' => MENU_CALLBACK,
   );

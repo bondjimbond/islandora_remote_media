@@ -13,10 +13,12 @@ function islandora_remote_media_permission() {
     'ISLANDORA_REMOTE_MEDIA_EDIT_OBJ' => array(
       'title' => t('Edit Remote Media embed code'),
       'description' => t('Edit the OBJ datastream for Remote Media objects.'),
+      'restrict access' => TRUE,
     ),
     'ISLANDORA_REMOTE_MEDIA_REPLACE_OBJ' => array(
       'title' => t('Replace Remote Media OBJ datastream'),
       'description' => t('Upload a file to replace the Remote Media OBJ datastream.'),
+      'restrict access' => TRUE,
     ),
   );
   return $permissions;

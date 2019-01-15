@@ -6,6 +6,23 @@
  */
 
 /**
+ * Implements hook_permission().
+ */
+function islandora_remote_media_permission() {
+  $permissions = array(
+    'ISLANDORA_REMOTE_MEDIA_EDIT_OBJ' => array(
+      'title' => t('Edit Remote Media embed code'),
+      'description' => t('Edit the OBJ datastream for Remote Media objects.'),
+    ),
+    'ISLANDORA_REMOTE_MEDIA_REPLACE_OBJ' => array(
+      'title' => t('Replace Remote Media OBJ datastream'),
+      'description' => t('Upload a file to replace the Remote Media OBJ datastream.'),
+    ),
+  );
+  return $permissions;
+}
+
+/**
  * Implements hook_menu().
  */
 function islandora_remote_media_menu() {
@@ -18,13 +35,24 @@ function islandora_remote_media_menu() {
     'access callback' => 'islandora_object_manage_access_callback',
     'access arguments' => array(
       array(
-        ISLANDORA_METADATA_EDIT,
-        ISLANDORA_ADD_DS,
-        ISLANDORA_PURGE,
+        'ISLANDORA_REMOTE_MEDIA_EDIT_OBJ',
       ), 2),
     'type' => MENU_CALLBACK,
   );
   return $items;
+}
+
+
+/**
+ * Implements hook_CMODEL_PID_islandora_datastream_access().
+ */
+function islandora_remote_media_islandora_sp_remoteMediaCModel_islandora_datastream_access($op, $object, $user) {
+  if ($op == 'replace a datastream with new content, preserving version history') {
+    if ($object->id == 'OBJ') {
+      $owner = $object->parent->owner;
+      return ($user->name == $owner || user_access('ISLANDORA_REMOTE_MEDIA_REPLACE_OBJ'));
+    }
+  }
 }
 
 /**

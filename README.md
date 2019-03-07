@@ -1,6 +1,6 @@
 # Islandora Remote Media Solution Pack
 
-An Islandora Solution Pack that allows for ingesting and playing media  hosted elsewhere on the web, using the media embed code.
+An Islandora Solution Pack that allows for ingesting and playing media hosted elsewhere on the web, using media embed code provided by the remote host.
 
 ## Introduction
 
@@ -14,6 +14,16 @@ The use case for this solution pack is to make externally-hosted media discovera
 This is particularly useful if storage is expensive, as Islandora media objects and their derivatives have high storage demands.
 
 ![Screenshot](https://i.imgur.com/F3nzfbT.png)
+
+## Usage and Details
+
+Remote Media objects use the Content Model `islandora:sp_remoteMediaCModel`. An ingest form is included.
+
+Ingest a Remote Media object in the normal way. In the first step, enter the embed code provided by the remote resource. Then fill out the metadata as usual.
+
+Embed code can be modified by editing the OBJ datastream (Manage -> Datastreams, click "edit" in the OBJ row). The OBJ datastream may also be replaced with a plaintext file (.asc or .txt).
+
+Permissions are required to edit and replace Remote Media OBJ datastreams.
 
 ## Requirements
 

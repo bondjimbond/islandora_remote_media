@@ -67,16 +67,10 @@ function islandora_remote_media_islandora_required_objects(IslandoraTuque $conne
   $remote_media_content_model->owner = 'fedoraAdmin';
   $remote_media_content_model->label = 'Islandora Remote Media Content Model';
   $remote_media_content_model->models = 'fedora-system:ContentModel-3.0';
-  // ISLANDORACM Datastream.
-  $datastream = $remote_media_content_model->constructDatastream('ISLANDORACM', 'X');
-  $datastream->label = 'Islandora content model';
-  $datastream->mimetype = 'text/xml';
-  $datastream->setContentFromFile("$module_path/xml/islandora_remote_media_cmodel.xml", FALSE);
-  $remote_media_content_model->ingestDatastream($datastream);
   // DS-COMPOSITE-MODEL Datastream.
   $datastream = $remote_media_content_model->constructDatastream('DS-COMPOSITE-MODEL', 'X');
   $datastream->label = 'DS-COMPOSITE-MODEL';
-  $datastream->mimetype = 'text/xml';
+  $datastream->mimetype = 'application/xml';
   $datastream->setContentFromFile("$module_path/xml/islandora_remote_media_ds_composite_model.xml", FALSE);
   $remote_media_content_model->ingestDatastream($datastream);
   // Remote Media Collection.
@@ -88,7 +82,7 @@ function islandora_remote_media_islandora_required_objects(IslandoraTuque $conne
   // Collection Policy Datastream.
   $datastream = $remote_media_collection->constructDatastream('COLLECTION_POLICY', 'X');
   $datastream->label = 'Collection policy';
-  $datastream->mimetype = 'text/xml';
+  $datastream->mimetype = 'application/xml';
   $datastream->setContentFromFile("$module_path/xml/islandora_remote_media_collection_policy.xml", FALSE);
   $remote_media_collection->ingestDatastream($datastream);
   // TN Datastream.

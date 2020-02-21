@@ -25,6 +25,10 @@ Embed code can be modified by editing the OBJ datastream (Manage -> Datastreams,
 
 Permissions are required to edit and replace Remote Media OBJ datastreams.
 
+### Batch ingest
+
+Remote Media objects can be batch ingested in the usual ways. The OBJ should be a `.asc` file, and its contents the HTML embed code. `.txt` files, while they work as OBJs in the "Replace Datastream" interface, will confuse Islandora in batch uploads and overwrite your MODS files.
+
 ## Requirements
 
 * [Islandora](https://github.com/Islandora/islandora)
